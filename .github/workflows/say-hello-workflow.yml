@@ -1,6 +1,8 @@
 name: snsinahub-valet/circleci/say-hello-workflow
 on:
-  push: main
+  push: 
+    branches:
+      - main
 jobs:
   say-hello:
     runs-on: ubuntu-latest
