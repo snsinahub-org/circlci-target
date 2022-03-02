@@ -1,0 +1,21 @@
+name: snsinahub-valet/Cirecle-migration/start-step-2
+on:
+  workflow_dispatch:
+  
+jobs:
+  step-2:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.6
+    env:
+      DOCKER_LOGIN: ''
+    steps:
+    - uses: actions/checkout@v2
+#     # 'setup_remote_docker' was not transformed because there is no suitable equivalent in GitHub Actions
+    - name: Docker build
+      run: |-
+        docker build \
+        -t docker.io/snsinahub-valet/aws-migration:$GITHUB_SHA
+      timeout-minutes: 10
+    - run: 'echo "Digest is: $(</tmp/digest.txt)"
+        '
