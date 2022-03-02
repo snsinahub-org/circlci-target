@@ -4,10 +4,6 @@ on:
 jobs:
   step-2:
     runs-on: ubuntu-latest
-    container:
-      image: python:3.6
-    env:
-      DOCKER_LOGIN: ''
     steps:
     - uses: actions/checkout@v2
     - name: Set up QEMU
