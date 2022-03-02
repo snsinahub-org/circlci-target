@@ -1,8 +1,6 @@
 name: snsinahub-valet/Cirecle-migration/start-step-2
 on:
-  push:
-    branches:
-    - main
+  workflow_dispatch:
 jobs:
   step-2:
     runs-on: ubuntu-latest
